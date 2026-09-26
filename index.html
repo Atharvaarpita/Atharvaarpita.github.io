@@ -1,16 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Income Tax Automation System</title>
+<title>Income Tax Practitioner Automation System</title>
+<style>
+body{
+font-family:Arial;
+background:#f4f4f4;
+text-align:center;
+margin:0;
+}
+
+header{
+background:#003366;
+color:white;
+padding:20px;
+}
+
+.container{
+padding:30px;
+}
+
+button{
+background:#007bff;
+color:white;
+border:none;
+padding:15px 25px;
+margin:10px;
+font-size:18px;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+
+.card{
+background:white;
+width:80%;
+margin:auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+</style>
 </head>
+
 <body>
 
-<h1>Income Tax Practitioner Document Automation & WhatsApp Delivery System</h1>
+<header>
+<h1>Income Tax Practitioner</h1>
+<h2>Document Automation & WhatsApp Delivery System</h2>
+</header>
 
-<button>Income Tax</button>
-<button>GST</button>
-<button>Audit</button>
-<button>Other Documents</button>
+<div class="container">
+
+<div class="card">
+
+<h2>Select Service</h2>
+
+<button onclick="showMsg('Income Tax Selected')">
+Income Tax
+</button>
+
+<button onclick="showMsg('GST Selected')">
+GST
+</button>
+
+<button onclick="showMsg('Audit Selected')">
+Audit
+</button>
+
+<button onclick="showMsg('Other Documents Selected')">
+Other Documents
+</button>
+
+<h3 id="result"></h3>
+
+</div>
+
+</div>
+
+<script>
+function showMsg(msg){
+document.getElementById("result").innerHTML=msg;
+}
+</script>
 
 </body>
 </html>
