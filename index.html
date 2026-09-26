@@ -1,6 +1,277 @@
-function openDashboard(){
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Income Tax Practitioner Portal</title>
 
-document.querySelector(".container").innerHTML =
-document.getElementById("dashboard").outerHTML;
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#001f4d,#0059b3,#4facfe);
+margin:0;
+padding:0;
+}
+
+.header{
+background:#082b52;
+color:white;
+text-align:center;
+padding:25px;
+font-size:32px;
+font-weight:bold;
+}
+
+.container{
+width:85%;
+margin:auto;
+margin-top:30px;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+h2{
+color:#082b52;
+}
+
+input,select{
+padding:10px;
+width:300px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+padding:12px 25px;
+background:#0059b3;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:18px;
+margin:5px;
+}
+
+button:hover{
+background:#003d80;
+}
+
+.section{
+display:none;
+margin-top:20px;
+padding:15px;
+background:#f4f8ff;
+border-radius:10px;
+}
+
+#dashboard{
+display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+Income Tax Practitioner<br>
+Document Automation & WhatsApp Delivery System
+</div>
+
+<div class="container">
+
+<div id="loginPage">
+
+<h2>Client Registration</h2>
+
+<label>Client Name</label><br>
+<input type="text" placeholder="Enter Name">
+
+<br>
+
+<label>Mobile Number</label><br>
+<input type="text" placeholder="Enter Mobile Number">
+
+<br>
+
+<button onclick="sendOTP()">Send OTP</button>
+
+<div id="otpSection" style="display:none;">
+
+<br>
+
+<label>Enter OTP</label><br>
+<input type="text" placeholder="1234">
+
+<br>
+
+<button onclick="verifyOTP()">Verify OTP</button>
+
+</div>
+
+</div>
+
+
+<div id="dashboard">
+
+<h1 style="text-align:center;color:#0059b3;">
+Client Dashboard
+</h1>
+
+<h2>Select Service</h2>
+
+<button onclick="showSection('tax')">Income Tax</button>
+
+<button onclick="showSection('gst')">GST</button>
+
+<button onclick="showSection('audit')">Audit</button>
+
+<button onclick="showSection('other')">Other Documents</button>
+
+
+<div id="tax" class="section">
+
+<h2>Income Tax Documents</h2>
+
+<label>Select Financial Year</label><br>
+
+<select>
+<option>FY 2026-27</option>
+<option>FY 2025-26</option>
+<option>FY 2024-25</option>
+<option>FY 2023-24</option>
+</select>
+
+<br>
+
+<label>Select Document Type</label><br>
+
+<select>
+<option>Balance Sheet</option>
+<option>Computation</option>
+<option>ITR</option>
+<option>Tax Challan</option>
+<option>Advance Tax Challan</option>
+</select>
+
+<br>
+
+<label>Upload File</label><br>
+<input type="file">
+
+<br>
+
+<button>Submit</button>
+
+</div>
+
+
+<div id="gst" class="section">
+
+<h2>GST Documents</h2>
+
+<label>Select Year</label><br>
+
+<select>
+<option>2026</option>
+<option>2025</option>
+<option>2024</option>
+</select>
+
+<br>
+
+<label>Select GST Form</label><br>
+
+<select>
+<option>GSTR-1</option>
+<option>GSTR-3B</option>
+<option>GSTR-9</option>
+<option>GST Audit Report</option>
+</select>
+
+<br>
+
+<input type="file">
+
+<br>
+
+<button>Submit</button>
+
+</div>
+
+
+<div id="audit" class="section">
+
+<h2>Audit Documents</h2>
+
+<select>
+<option>Audit Report</option>
+<option>Tax Audit Report</option>
+<option>Working Papers</option>
+</select>
+
+<br>
+
+<input type="file">
+
+<br>
+
+<button>Submit</button>
+
+</div>
+
+
+<div id="other" class="section">
+
+<h2>Other Documents</h2>
+
+<input type="text" placeholder="Document Name">
+
+<br>
+
+<input type="file">
+
+<br>
+
+<button>Upload</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function sendOTP(){
+document.getElementById("otpSection").style.display="block";
+alert("Demo OTP Sent : 1234");
+}
+
+function verifyOTP(){
+
+document.getElementById("loginPage").style.display="none";
+
+document.getElementById("dashboard").style.display="block";
 
 }
+
+function showSection(id){
+
+document.getElementById('tax').style.display='none';
+document.getElementById('gst').style.display='none';
+document.getElementById('audit').style.display='none';
+document.getElementById('other').style.display='none';
+
+document.getElementById(id).style.display='block';
+
+}
+
+</script>
+
+</body>
+</html>
