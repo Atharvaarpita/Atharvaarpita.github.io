@@ -1,89 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Income Tax Practitioner</title>
-
-<style>
-body{
-font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#0f4c81,#4facfe);
-margin:0;
-padding:0;
-}
-
-.header{
-background:#082b52;
-color:white;
-text-align:center;
-padding:25px;
-font-size:30px;
-font-weight:bold;
-}
-
-.container{
-width:80%;
-margin:auto;
-margin-top:30px;
-background:white;
-padding:30px;
-border-radius:15px;
-box-shadow:0 0 15px gray;
-}
-
-input{
-padding:10px;
-width:250px;
-margin:10px;
-}
-
-button{
-padding:10px 20px;
-background:#0f4c81;
-color:white;
-border:none;
-border-radius:8px;
-cursor:pointer;
-margin:5px;
-}
-
-.section{
-display:none;
-margin-top:20px;
-}
-</style>
-
-</head>
-
-<body>
-
-<div class="header">
-Income Tax Practitioner<br>
-Document Automation & WhatsApp Delivery System
-</div>
-
-<div class="container">
-
-<h2>Client Login</h2>
-
-<input type="text" placeholder="Enter Mobile Number">
-<button onclick="verifyOTP()">Send OTP</button>
-
-<div id="otpBox" style="display:none;">
-<input type="text" placeholder="Enter OTP">
-<button onclick="openDashboard()">Verify</button>
-</div>
-
-<div id="dashboard" style="display:none;">
+<h1 style="text-align:center;color:#0f4c81;">
+Client Dashboard
+</h1>
 
 <h2>Select Service</h2>
 
-<button onclick="showSection('tax')">Income Tax</button>
-<button onclick="showSection('gst')">GST</button>
-<button onclick="showSection('audit')">Audit</button>
-<button onclick="showSection('other')">Other Documents</button>
+<button style="font-size:20px;padding:15px 30px;"
+onclick="showSection('tax')">Income Tax</button>
+
+<button style="font-size:20px;padding:15px 30px;"
+onclick="showSection('gst')">GST</button>
+
+<button style="font-size:20px;padding:15px 30px;"
+onclick="showSection('audit')">Audit</button>
+
+<button style="font-size:20px;padding:15px 30px;"
+onclick="showSection('other')">Other Documents</button>
+
 
 <div id="tax" class="section">
-<h3>Income Tax Section</h3>
+
+<h2>Income Tax Documents</h2>
+
+<label>Select Financial Year</label>
+
+<select>
+<option>FY 2026-27</option>
+<option>FY 2025-26</option>
+<option>FY 2024-25</option>
+<option>FY 2023-24</option>
+</select>
+
+<br><br>
+
+<label>Upload Document</label>
+<input type="file">
+
 <ul>
 <li>Balance Sheet</li>
 <li>Computation</li>
@@ -91,70 +42,59 @@ Document Automation & WhatsApp Delivery System
 <li>Tax Challan</li>
 <li>Advance Tax Challan</li>
 </ul>
+
 </div>
 
+
 <div id="gst" class="section">
-<h3>GST Section</h3>
+
+<h2>GST Documents</h2>
+
+<select>
+<option>2026</option>
+<option>2025</option>
+<option>2024</option>
+</select>
+
+<br><br>
+
+<input type="file">
+
 <ul>
 <li>GSTR-1</li>
 <li>GSTR-3B</li>
 <li>GSTR-9</li>
-<li>GST Audit Report</li>
 </ul>
+
 </div>
 
+
 <div id="audit" class="section">
-<h3>Audit Section</h3>
+
+<h2>Audit Documents</h2>
+
+<input type="file">
+
 <ul>
 <li>Audit Report</li>
 <li>Tax Audit Report</li>
 <li>Working Papers</li>
 </ul>
+
 </div>
+
 
 <div id="other" class="section">
-<h3>Other Documents</h3>
+
+<h2>Other Documents</h2>
+
+<input type="file">
+
 <ul>
 <li>Project Report</li>
-<li>Projected B/S</li>
+<li>Projected Balance Sheet</li>
 <li>Bank Documents</li>
+<li>Any Other Document</li>
 </ul>
-</div>
-
-<br><br>
-
-<h2>Client Reminder</h2>
-
-<input type="date">
-<button onclick="alert('WhatsApp Reminder Sent Successfully')">
-Send Reminder
-</button>
 
 </div>
-
-</div>
-
-<script>
-
-function verifyOTP(){
-document.getElementById("otpBox").style.display="block";
-}
-
-function openDashboard(){
-document.getElementById("dashboard").style.display="block";
-}
-
-function showSection(id){
-
-document.getElementById('tax').style.display='none';
-document.getElementById('gst').style.display='none';
-document.getElementById('audit').style.display='none';
-document.getElementById('other').style.display='none';
-
-document.getElementById(id).style.display='block';
-}
-
-</script>
-
-</body>
-</html>
